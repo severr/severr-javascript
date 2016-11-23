@@ -153,7 +153,7 @@
                 .fromError(err)
                 .then(function(stackFrames) {
                     var newEvent = fillStacktrace(err, stackFrames);
-                    _this.SendEvent(newEvent, function(error, data, response) {
+                    _this.sendEvent(newEvent, function(error, data, response) {
                         if(error) {
                             console.error('Error Response: ' + error + ', data = ' + data + ', response = ' + JSON.stringify(response));
                         } else {
