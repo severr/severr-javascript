@@ -178,11 +178,15 @@
          * @param shouldDie should the process exit on error (applicable to node or other environments, ignored if in browser)
          */
         SeverrClient.prototype.handleExceptions = function(shouldDie) {
-            var _this = this;
-
             if(typeof window !== 'undefined') {
                 window.onerror = function(msg, file, line, col, error) {
-                    sendEventFromError(error, false);
+                    var string = msg.toLowerCase();
+                    var substring = "script error";
+                    if (string.indexOf(substring) > -1){
+                        console.error('Script Error: Script error encountered, see browser console for more.');
+                    } else {
+                        sendEventFromError(error, false);
+                    }
                 }
             } else if(typeof process !== 'undefined') {
                 shouldDie = (typeof shouldDie === 'undefined') ? true : shouldDie;
