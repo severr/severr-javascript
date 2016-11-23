@@ -128,7 +128,7 @@
         function fillStacktrace(error, stackFrames) {
             var type = (typeof error === 'object') ? error.constructor.name : (typeof error).toString();
 
-            var newEvent = _this.GetNewAppEvent("Error", type, error.toString());
+            var newEvent = _this.createAppEvent("Error", type, error.toString());
             newEvent.eventStacktrace = new SeverrApi.Stacktrace();
 
             var innerTrace = new SeverrApi.InnerStackTrace();
@@ -214,7 +214,7 @@
         /**
          * Send event to Severr
          *
-         * @param appEvent the event to send constructed using {GetNewAppEvent}
+         * @param appEvent the event to send constructed using {createAppEvent}
          * @param callback the callback accepting the following parameters: error, data, response
          */
         SeverrClient.prototype.sendEvent = function(appEvent, callback) {

@@ -10,13 +10,13 @@ Get your application events and errors to Severr via the *Severr API*.
 - nodejs
 
 ## Dependencies
-npm install --save severr_javascript
+npm install --save severr/severr-javascript
 
 ## Getting Started
 
 ### Create a client
 ```javascript
-var SeverrClient = require('../index.js');
+var SeverrClient = require('severr-javascript');
 var client = new SeverrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
 ```
 
@@ -53,7 +53,7 @@ try {
 'use strict';
 
 // create a new client
-var SeverrClient = require('../index.js');
+var SeverrClient = require('severr-javascript');
 var client = new SeverrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
 
 // Option-1: Add a global exception handler, any error thrown with throw new Error('...'); will now be sent to Severr
