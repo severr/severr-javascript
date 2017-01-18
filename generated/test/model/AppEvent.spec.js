@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -31,15 +31,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SeverrApi);
+    factory(root.expect, root.TrakerrApi);
   }
-}(this, function(expect, SeverrApi) {
+}(this, function(expect, TrakerrApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SeverrApi.AppEvent();
+    instance = new TrakerrApi.AppEvent();
   });
 
   var getProperty = function(object, getter, property) {
@@ -61,127 +61,127 @@
   describe('AppEvent', function() {
     it('should create an instance of AppEvent', function() {
       // uncomment below and update the code to test AppEvent
-      //var instane = new SeverrApi.AppEvent();
-      //expect(instance).to.be.a(SeverrApi.AppEvent);
+      //var instane = new TrakerrApi.AppEvent();
+      //expect(instance).to.be.a(TrakerrApi.AppEvent);
     });
 
     it('should have the property apiKey (base name: "apiKey")', function() {
       // uncomment below and update the code to test the property apiKey
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property classification (base name: "classification")', function() {
       // uncomment below and update the code to test the property classification
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property eventType (base name: "eventType")', function() {
       // uncomment below and update the code to test the property eventType
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property eventMessage (base name: "eventMessage")', function() {
       // uncomment below and update the code to test the property eventMessage
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property eventTime (base name: "eventTime")', function() {
       // uncomment below and update the code to test the property eventTime
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property eventStacktrace (base name: "eventStacktrace")', function() {
       // uncomment below and update the code to test the property eventStacktrace
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property eventUser (base name: "eventUser")', function() {
       // uncomment below and update the code to test the property eventUser
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property eventSession (base name: "eventSession")', function() {
       // uncomment below and update the code to test the property eventSession
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextAppVersion (base name: "contextAppVersion")', function() {
       // uncomment below and update the code to test the property contextAppVersion
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextEnvName (base name: "contextEnvName")', function() {
       // uncomment below and update the code to test the property contextEnvName
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextEnvVersion (base name: "contextEnvVersion")', function() {
       // uncomment below and update the code to test the property contextEnvVersion
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextEnvHostname (base name: "contextEnvHostname")', function() {
       // uncomment below and update the code to test the property contextEnvHostname
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextAppBrowser (base name: "contextAppBrowser")', function() {
       // uncomment below and update the code to test the property contextAppBrowser
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextAppBrowserVersion (base name: "contextAppBrowserVersion")', function() {
       // uncomment below and update the code to test the property contextAppBrowserVersion
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextAppOS (base name: "contextAppOS")', function() {
       // uncomment below and update the code to test the property contextAppOS
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextAppOSVersion (base name: "contextAppOSVersion")', function() {
       // uncomment below and update the code to test the property contextAppOSVersion
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextDataCenter (base name: "contextDataCenter")', function() {
       // uncomment below and update the code to test the property contextDataCenter
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property contextDataCenterRegion (base name: "contextDataCenterRegion")', function() {
       // uncomment below and update the code to test the property contextDataCenterRegion
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property customProperties (base name: "customProperties")', function() {
       // uncomment below and update the code to test the property customProperties
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property customSegments (base name: "customSegments")', function() {
       // uncomment below and update the code to test the property customSegments
-      //var instane = new SeverrApi.AppEvent();
+      //var instane = new TrakerrApi.AppEvent();
       //expect(instance).to.be();
     });
 

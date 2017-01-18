@@ -1,4 +1,4 @@
-# SeverrApi.CustomDoubleData
+# TrakerrApi.CustomDoubleData
 
 ## Properties
 Name | Type | Description | Notes

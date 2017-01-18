@@ -1,4 +1,4 @@
-# SeverrApi.AppEvent
+# TrakerrApi.AppEvent
 
 ## Properties
 Name | Type | Description | Notes

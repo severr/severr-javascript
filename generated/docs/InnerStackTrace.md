@@ -1,4 +1,4 @@
-# SeverrApi.InnerStackTrace
+# TrakerrApi.InnerStackTrace
 
 ## Properties
 Name | Type | Description | Notes

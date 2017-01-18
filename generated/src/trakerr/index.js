@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -25,7 +25,7 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['severr/ApiClient', 'severr/model/AppEvent', 'severr/model/CustomData', 'severr/model/CustomDoubleData', 'severr/model/CustomStringData', 'severr/model/Error', 'severr/model/InnerStackTrace', 'severr/model/StackTraceLine', 'severr/model/StackTraceLines', 'severr/model/Stacktrace', 'severr/api/EventsApi'], factory);
+    define(['trakerr/ApiClient', 'trakerr/model/AppEvent', 'trakerr/model/CustomData', 'trakerr/model/CustomDoubleData', 'trakerr/model/CustomStringData', 'trakerr/model/Error', 'trakerr/model/InnerStackTrace', 'trakerr/model/StackTraceLine', 'trakerr/model/StackTraceLines', 'trakerr/model/Stacktrace', 'trakerr/api/EventsApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('./ApiClient'), require('./model/AppEvent'), require('./model/CustomData'), require('./model/CustomDoubleData'), require('./model/CustomStringData'), require('./model/Error'), require('./model/InnerStackTrace'), require('./model/StackTraceLine'), require('./model/StackTraceLines'), require('./model/Stacktrace'), require('./api/EventsApi'));
@@ -34,90 +34,90 @@
   'use strict';
 
   /**
-   * Get_your_application_events_and_errors_to_Severr_via_the_Severr_API_.<br>
+   * Get_your_application_events_and_errors_to_Trakerr_via_the_Trakerr_API_.<br>
    * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
    * <pre>
-   * var SeverrApi = require('severr/index'); // See note below*.
-   * var xxxSvc = new SeverrApi.XxxApi(); // Allocate the API class we're going to use.
-   * var yyyModel = new SeverrApi.Yyy(); // Construct a model instance.
+   * var TrakerrApi = require('trakerr/index'); // See note below*.
+   * var xxxSvc = new TrakerrApi.XxxApi(); // Allocate the API class we're going to use.
+   * var yyyModel = new TrakerrApi.Yyy(); // Construct a model instance.
    * yyyModel.someProperty = 'someValue';
    * ...
    * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
    * ...
    * </pre>
-   * <em>*NOTE: For a top-level AMD script, use require(['severr/index'], function(){...})
+   * <em>*NOTE: For a top-level AMD script, use require(['trakerr/index'], function(){...})
    * and put the application logic within the callback function.</em>
    * </p>
    * <p>
    * A non-AMD browser application (discouraged) might do something like this:
    * <pre>
-   * var xxxSvc = new SeverrApi.XxxApi(); // Allocate the API class we're going to use.
-   * var yyy = new SeverrApi.Yyy(); // Construct a model instance.
+   * var xxxSvc = new TrakerrApi.XxxApi(); // Allocate the API class we're going to use.
+   * var yyy = new TrakerrApi.Yyy(); // Construct a model instance.
    * yyyModel.someProperty = 'someValue';
    * ...
    * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
    * ...
    * </pre>
    * </p>
-   * @module severr/index
+   * @module trakerr/index
    * @version 1.0.0
    */
   var exports = {
     /**
      * The ApiClient constructor.
-     * @property {module:severr/ApiClient}
+     * @property {module:trakerr/ApiClient}
      */
     ApiClient: ApiClient,
     /**
      * The AppEvent model constructor.
-     * @property {module:severr/model/AppEvent}
+     * @property {module:trakerr/model/AppEvent}
      */
     AppEvent: AppEvent,
     /**
      * The CustomData model constructor.
-     * @property {module:severr/model/CustomData}
+     * @property {module:trakerr/model/CustomData}
      */
     CustomData: CustomData,
     /**
      * The CustomDoubleData model constructor.
-     * @property {module:severr/model/CustomDoubleData}
+     * @property {module:trakerr/model/CustomDoubleData}
      */
     CustomDoubleData: CustomDoubleData,
     /**
      * The CustomStringData model constructor.
-     * @property {module:severr/model/CustomStringData}
+     * @property {module:trakerr/model/CustomStringData}
      */
     CustomStringData: CustomStringData,
     /**
      * The Error model constructor.
-     * @property {module:severr/model/Error}
+     * @property {module:trakerr/model/Error}
      */
     Error: Error,
     /**
      * The InnerStackTrace model constructor.
-     * @property {module:severr/model/InnerStackTrace}
+     * @property {module:trakerr/model/InnerStackTrace}
      */
     InnerStackTrace: InnerStackTrace,
     /**
      * The StackTraceLine model constructor.
-     * @property {module:severr/model/StackTraceLine}
+     * @property {module:trakerr/model/StackTraceLine}
      */
     StackTraceLine: StackTraceLine,
     /**
      * The StackTraceLines model constructor.
-     * @property {module:severr/model/StackTraceLines}
+     * @property {module:trakerr/model/StackTraceLines}
      */
     StackTraceLines: StackTraceLines,
     /**
      * The Stacktrace model constructor.
-     * @property {module:severr/model/Stacktrace}
+     * @property {module:trakerr/model/Stacktrace}
      */
     Stacktrace: Stacktrace,
     /**
      * The EventsApi service constructor.
-     * @property {module:severr/api/EventsApi}
+     * @property {module:trakerr/api/EventsApi}
      */
     EventsApi: EventsApi
   };

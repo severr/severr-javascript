@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -31,15 +31,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SeverrApi);
+    factory(root.expect, root.TrakerrApi);
   }
-}(this, function(expect, SeverrApi) {
+}(this, function(expect, TrakerrApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SeverrApi.CustomDoubleData();
+    instance = new TrakerrApi.CustomDoubleData();
   });
 
   var getProperty = function(object, getter, property) {
@@ -61,67 +61,67 @@
   describe('CustomDoubleData', function() {
     it('should create an instance of CustomDoubleData', function() {
       // uncomment below and update the code to test CustomDoubleData
-      //var instane = new SeverrApi.CustomDoubleData();
-      //expect(instance).to.be.a(SeverrApi.CustomDoubleData);
+      //var instane = new TrakerrApi.CustomDoubleData();
+      //expect(instance).to.be.a(TrakerrApi.CustomDoubleData);
     });
 
     it('should have the property customData1 (base name: "customData1")', function() {
       // uncomment below and update the code to test the property customData1
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 
     it('should have the property customData2 (base name: "customData2")', function() {
       // uncomment below and update the code to test the property customData2
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 
     it('should have the property customData3 (base name: "customData3")', function() {
       // uncomment below and update the code to test the property customData3
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 
     it('should have the property customData4 (base name: "customData4")', function() {
       // uncomment below and update the code to test the property customData4
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 
     it('should have the property customData5 (base name: "customData5")', function() {
       // uncomment below and update the code to test the property customData5
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 
     it('should have the property customData6 (base name: "customData6")', function() {
       // uncomment below and update the code to test the property customData6
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 
     it('should have the property customData7 (base name: "customData7")', function() {
       // uncomment below and update the code to test the property customData7
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 
     it('should have the property customData8 (base name: "customData8")', function() {
       // uncomment below and update the code to test the property customData8
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 
     it('should have the property customData9 (base name: "customData9")', function() {
       // uncomment below and update the code to test the property customData9
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 
     it('should have the property customData10 (base name: "customData10")', function() {
       // uncomment below and update the code to test the property customData10
-      //var instane = new SeverrApi.CustomDoubleData();
+      //var instane = new TrakerrApi.CustomDoubleData();
       //expect(instance).to.be();
     });
 

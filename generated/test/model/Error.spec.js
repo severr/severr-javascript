@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -31,15 +31,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SeverrApi);
+    factory(root.expect, root.TrakerrApi);
   }
-}(this, function(expect, SeverrApi) {
+}(this, function(expect, TrakerrApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SeverrApi.Error();
+    instance = new TrakerrApi.Error();
   });
 
   var getProperty = function(object, getter, property) {
@@ -61,25 +61,25 @@
   describe('Error', function() {
     it('should create an instance of Error', function() {
       // uncomment below and update the code to test Error
-      //var instane = new SeverrApi.Error();
-      //expect(instance).to.be.a(SeverrApi.Error);
+      //var instane = new TrakerrApi.Error();
+      //expect(instance).to.be.a(TrakerrApi.Error);
     });
 
     it('should have the property code (base name: "code")', function() {
       // uncomment below and update the code to test the property code
-      //var instane = new SeverrApi.Error();
+      //var instane = new TrakerrApi.Error();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new SeverrApi.Error();
+      //var instane = new TrakerrApi.Error();
       //expect(instance).to.be();
     });
 
     it('should have the property fields (base name: "fields")', function() {
       // uncomment below and update the code to test the property fields
-      //var instane = new SeverrApi.Error();
+      //var instane = new TrakerrApi.Error();
       //expect(instance).to.be();
     });
 

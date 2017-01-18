@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -25,59 +25,78 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['severr/ApiClient', 'severr/model/InnerStackTrace'], factory);
+    define(['trakerr/ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InnerStackTrace'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
-    if (!root.SeverrApi) {
-      root.SeverrApi = {};
+    if (!root.TrakerrApi) {
+      root.TrakerrApi = {};
     }
-    root.SeverrApi.Stacktrace = factory(root.SeverrApi.ApiClient, root.SeverrApi.InnerStackTrace);
+    root.TrakerrApi.StackTraceLine = factory(root.TrakerrApi.ApiClient);
   }
-}(this, function(ApiClient, InnerStackTrace) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The Stacktrace model module.
-   * @module severr/model/Stacktrace
+   * The StackTraceLine model module.
+   * @module trakerr/model/StackTraceLine
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>Stacktrace</code>.
-   * @alias module:severr/model/Stacktrace
+   * Constructs a new <code>StackTraceLine</code>.
+   * @alias module:trakerr/model/StackTraceLine
    * @class
-   * @extends Array
    */
   var exports = function() {
     var _this = this;
-    _this = new Array();
-    Object.setPrototypeOf(_this, exports);
 
-    return _this;
+
+
+
   };
 
   /**
-   * Constructs a <code>Stacktrace</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>StackTraceLine</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:severr/model/Stacktrace} obj Optional instance to populate.
-   * @return {module:severr/model/Stacktrace} The populated <code>Stacktrace</code> instance.
+   * @param {module:trakerr/model/StackTraceLine} obj Optional instance to populate.
+   * @return {module:trakerr/model/StackTraceLine} The populated <code>StackTraceLine</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      ApiClient.constructFromObject(data, obj, InnerStackTrace);
 
+      if (data.hasOwnProperty('function')) {
+        obj['function'] = ApiClient.convertToType(data['function'], 'String');
+      }
+      if (data.hasOwnProperty('line')) {
+        obj['line'] = ApiClient.convertToType(data['line'], 'Integer');
+      }
+      if (data.hasOwnProperty('file')) {
+        obj['file'] = ApiClient.convertToType(data['file'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * @member {String} function
+   */
+  exports.prototype['function'] = undefined;
+  /**
+   * @member {Integer} line
+   */
+  exports.prototype['line'] = undefined;
+  /**
+   * @member {String} file
+   */
+  exports.prototype['file'] = undefined;
 
 
 

@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -31,15 +31,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SeverrApi);
+    factory(root.expect, root.TrakerrApi);
   }
-}(this, function(expect, SeverrApi) {
+}(this, function(expect, TrakerrApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SeverrApi.StackTraceLines();
+    instance = new TrakerrApi.StackTraceLines();
   });
 
   var getProperty = function(object, getter, property) {
@@ -61,8 +61,8 @@
   describe('StackTraceLines', function() {
     it('should create an instance of StackTraceLines', function() {
       // uncomment below and update the code to test StackTraceLines
-      //var instane = new SeverrApi.StackTraceLines();
-      //expect(instance).to.be.a(SeverrApi.StackTraceLines);
+      //var instane = new TrakerrApi.StackTraceLines();
+      //expect(instance).to.be.a(TrakerrApi.StackTraceLines);
     });
 
   });

@@ -1,6 +1,6 @@
 /**
- * Severr Client API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr Client API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -23,19 +23,19 @@
 (function(factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['./generated/src/severr/index', 'stacktrace-js'], factory);
+        define(['./generated/src/trakerr/index', 'stacktrace-js'], factory);
     } else if (typeof module === 'object' && module.exports) {
         // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('./generated/src/severr/index'), require('stacktrace-js'), require('error-stack-parser'));
+        module.exports = factory(require('./generated/src/trakerr/index'), require('stacktrace-js'), require('error-stack-parser'));
     }
-}(function(SeverrApi, StackTrace, ErrorStackParser) {
+}(function(TrakerrApi, StackTrace, ErrorStackParser) {
     'use strict';
 
     /**
-     * Create a SeverrClient instance
+     * Create a TrakerrClient instance
      *
      * @param apiKey API Key for the application
-     * @param url (optional) URL to Severr, specify null to use default
+     * @param url (optional) URL to Trakerr, specify null to use default
      * @param contextAppVersion (optional) application version, defaults to 1.0
      * @param contextEnvName (optional) environment name like "development", "staging", "production" or a custom string
      * @param contextEnvVersion (optional) environment version
@@ -50,7 +50,7 @@
      * @module index
      * @version 1.0.0
      */
-    var exports = function SeverrClient(apiKey,
+    var exports = function TrakerrClient(apiKey,
                            url,
                            contextAppVersion,
                            contextEnvName,
@@ -97,11 +97,11 @@
             }
         }
 
-        var apiClient = new SeverrApi.ApiClient();
+        var apiClient = new TrakerrApi.ApiClient();
         if(url) {
             apiClient.basePath = url;
         }
-        _this.eventsApi = new SeverrApi.EventsApi(apiClient);
+        _this.eventsApi = new TrakerrApi.EventsApi(apiClient);
 
         function fillDefaults(appEvent) {
             if (typeof appEvent.apiKey === 'undefined') appEvent.apiKey = _this.apiKey;
@@ -129,15 +129,15 @@
             var type = (typeof error === 'object') ? error.constructor.name : (typeof error).toString();
 
             var newEvent = _this.createAppEvent("Error", type, error.toString());
-            newEvent.eventStacktrace = new SeverrApi.Stacktrace();
+            newEvent.eventStacktrace = new TrakerrApi.Stacktrace();
 
-            var innerTrace = new SeverrApi.InnerStackTrace();
+            var innerTrace = new TrakerrApi.InnerStackTrace();
             innerTrace.type = type;
             innerTrace.message = error instanceof Error ? error.message : error.toString();
-            innerTrace.traceLines = new SeverrApi.StackTraceLines();
+            innerTrace.traceLines = new TrakerrApi.StackTraceLines();
 
             for(var i in stackFrames) {
-                var traceLine = new SeverrApi.StackTraceLine();
+                var traceLine = new TrakerrApi.StackTraceLine();
                 traceLine.function = stackFrames[i].functionName;
                 traceLine.file = stackFrames[i].fileName;
                 traceLine.line = stackFrames[i].lineNumber + ":" + stackFrames[i].columnNumber;
@@ -177,7 +177,7 @@
          *
          * @param shouldDie should the process exit on error (applicable to node or other environments, ignored if in browser)
          */
-        SeverrClient.prototype.handleExceptions = function(shouldDie) {
+        TrakerrClient.prototype.handleExceptions = function(shouldDie) {
             if(typeof window !== 'undefined') {
                 window.onerror = function(msg, file, line, col, error) {
                     var string = msg.toLowerCase();
@@ -205,23 +205,23 @@
          * @param eventMessage event message
          * @returns app event
          */
-        SeverrClient.prototype.createAppEvent = function(classification, eventType, eventMessage) {
+        TrakerrClient.prototype.createAppEvent = function(classification, eventType, eventMessage) {
             var _this = this;
 
             if(!classification) classification = "Error";
             if(!eventType) eventType = 'unknown';
             if(!eventMessage) eventMessage = 'unknown';
 
-            return fillDefaults(new SeverrApi.AppEvent(_this.apiKey, classification, eventType, eventMessage));
+            return fillDefaults(new TrakerrApi.AppEvent(_this.apiKey, classification, eventType, eventMessage));
         };
 
         /**
-         * Send event to Severr
+         * Send event to Trakerr
          *
          * @param appEvent the event to send constructed using {createAppEvent}
          * @param callback the callback accepting the following parameters: error, data, response
          */
-        SeverrClient.prototype.sendEvent = function(appEvent, callback) {
+        TrakerrClient.prototype.sendEvent = function(appEvent, callback) {
             var _this = this;
 
             return _this.eventsApi.eventsPost(fillDefaults(appEvent), callback);

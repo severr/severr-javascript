@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -25,16 +25,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['severr/ApiClient', 'severr/model/CustomData', 'severr/model/Stacktrace'], factory);
+    define(['trakerr/ApiClient', 'trakerr/model/CustomData', 'trakerr/model/Stacktrace'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('./CustomData'), require('./Stacktrace'));
   } else {
     // Browser globals (root is window)
-    if (!root.SeverrApi) {
-      root.SeverrApi = {};
+    if (!root.TrakerrApi) {
+      root.TrakerrApi = {};
     }
-    root.SeverrApi.AppEvent = factory(root.SeverrApi.ApiClient, root.SeverrApi.CustomData, root.SeverrApi.Stacktrace);
+    root.TrakerrApi.AppEvent = factory(root.TrakerrApi.ApiClient, root.TrakerrApi.CustomData, root.TrakerrApi.Stacktrace);
   }
 }(this, function(ApiClient, CustomData, Stacktrace) {
   'use strict';
@@ -44,13 +44,13 @@
 
   /**
    * The AppEvent model module.
-   * @module severr/model/AppEvent
+   * @module trakerr/model/AppEvent
    * @version 1.0.0
    */
 
   /**
    * Constructs a new <code>AppEvent</code>.
-   * @alias module:severr/model/AppEvent
+   * @alias module:trakerr/model/AppEvent
    * @class
    * @param apiKey {String} API key generated for the application
    * @param classification {String} one of 'debug','info','warning','error' or a custom string
@@ -86,8 +86,8 @@
    * Constructs a <code>AppEvent</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:severr/model/AppEvent} obj Optional instance to populate.
-   * @return {module:severr/model/AppEvent} The populated <code>AppEvent</code> instance.
+   * @param {module:trakerr/model/AppEvent} obj Optional instance to populate.
+   * @return {module:trakerr/model/AppEvent} The populated <code>AppEvent</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -183,7 +183,7 @@
    */
   exports.prototype['eventTime'] = undefined;
   /**
-   * @member {module:severr/model/Stacktrace} eventStacktrace
+   * @member {module:trakerr/model/Stacktrace} eventStacktrace
    */
   exports.prototype['eventStacktrace'] = undefined;
   /**
@@ -247,11 +247,11 @@
    */
   exports.prototype['contextDataCenterRegion'] = undefined;
   /**
-   * @member {module:severr/model/CustomData} customProperties
+   * @member {module:trakerr/model/CustomData} customProperties
    */
   exports.prototype['customProperties'] = undefined;
   /**
-   * @member {module:severr/model/CustomData} customSegments
+   * @member {module:trakerr/model/CustomData} customSegments
    */
   exports.prototype['customSegments'] = undefined;
 

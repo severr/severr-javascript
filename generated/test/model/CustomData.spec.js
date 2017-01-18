@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -31,15 +31,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SeverrApi);
+    factory(root.expect, root.TrakerrApi);
   }
-}(this, function(expect, SeverrApi) {
+}(this, function(expect, TrakerrApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SeverrApi.CustomData();
+    instance = new TrakerrApi.CustomData();
   });
 
   var getProperty = function(object, getter, property) {
@@ -61,19 +61,19 @@
   describe('CustomData', function() {
     it('should create an instance of CustomData', function() {
       // uncomment below and update the code to test CustomData
-      //var instane = new SeverrApi.CustomData();
-      //expect(instance).to.be.a(SeverrApi.CustomData);
+      //var instane = new TrakerrApi.CustomData();
+      //expect(instance).to.be.a(TrakerrApi.CustomData);
     });
 
     it('should have the property stringData (base name: "stringData")', function() {
       // uncomment below and update the code to test the property stringData
-      //var instane = new SeverrApi.CustomData();
+      //var instane = new TrakerrApi.CustomData();
       //expect(instance).to.be();
     });
 
     it('should have the property doubleData (base name: "doubleData")', function() {
       // uncomment below and update the code to test the property doubleData
-      //var instane = new SeverrApi.CustomData();
+      //var instane = new TrakerrApi.CustomData();
       //expect(instance).to.be();
     });
 

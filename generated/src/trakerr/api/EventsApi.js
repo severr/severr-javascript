@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -25,32 +25,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['severr/ApiClient', 'severr/model/AppEvent', 'severr/model/Error'], factory);
+    define(['trakerr/ApiClient', 'trakerr/model/AppEvent', 'trakerr/model/Error'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('../model/AppEvent'), require('../model/Error'));
   } else {
     // Browser globals (root is window)
-    if (!root.SeverrApi) {
-      root.SeverrApi = {};
+    if (!root.TrakerrApi) {
+      root.TrakerrApi = {};
     }
-    root.SeverrApi.EventsApi = factory(root.SeverrApi.ApiClient, root.SeverrApi.AppEvent, root.SeverrApi.Error);
+    root.TrakerrApi.EventsApi = factory(root.TrakerrApi.ApiClient, root.TrakerrApi.AppEvent, root.TrakerrApi.Error);
   }
 }(this, function(ApiClient, AppEvent, Error) {
   'use strict';
 
   /**
    * Events service.
-   * @module severr/api/EventsApi
+   * @module trakerr/api/EventsApi
    * @version 1.0.0
    */
 
   /**
    * Constructs a new EventsApi. 
-   * @alias module:severr/api/EventsApi
+   * @alias module:trakerr/api/EventsApi
    * @class
-   * @param {module:severr/ApiClient} apiClient Optional API client implementation to use,
-   * default to {@link module:severr/ApiClient#instance} if unspecified.
+   * @param {module:trakerr/ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:trakerr/ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
@@ -58,17 +58,17 @@
 
     /**
      * Callback function to receive the result of the eventsPost operation.
-     * @callback module:severr/api/EventsApi~eventsPostCallback
+     * @callback module:trakerr/api/EventsApi~eventsPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Submit an application event or error to Severr
-     *  The events endpoint submits an application event or an application error / exception with an optional stacktrace field to Severr.  ##### Sample POST request body: &#x60;&#x60;&#x60; {  \&quot;apiKey\&quot;: \&quot;a9a2807a2e8fd4602adae9e8f819790a267213234083\&quot;,  \&quot;classification\&quot;: \&quot;Error\&quot;,  \&quot;eventType\&quot;: \&quot;System.Exception\&quot;,  \&quot;eventMessage\&quot;: \&quot;This is a test exception.\&quot;,  \&quot;eventTime\&quot;: 1479477482291,  \&quot;eventStacktrace\&quot;: [    {      \&quot;type\&quot;: \&quot;System.Exception\&quot;,      \&quot;message\&quot;: \&quot;This is a test exception.\&quot;,      \&quot;traceLines\&quot;: [        {          \&quot;function\&quot;: \&quot;Main\&quot;,          \&quot;line\&quot;: 19,          \&quot;file\&quot;: \&quot;SeverrSampleApp\\\\Program.cs\&quot;        }      ]    }  ],  \&quot;contextAppVersion\&quot;: \&quot;1.0\&quot;,  \&quot;contextEnvName\&quot;: \&quot;development\&quot;,  \&quot;contextEnvHostname\&quot;: \&quot;severr.io\&quot;,  \&quot;contextAppOS\&quot;: \&quot;Win32NT Service Pack 1\&quot;,  \&quot;contextAppOSVersion\&quot;: \&quot;6.1.7601.65536\&quot; } &#x60;&#x60;&#x60; ##### Sample POST response body (200 OK): &#x60;&#x60;&#x60; { } &#x60;&#x60;&#x60; 
-     * @param {module:severr/model/AppEvent} data Event to submit
-     * @param {module:severr/api/EventsApi~eventsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * Submit an application event or error to Trakerr
+     *  The events endpoint submits an application event or an application error / exception with an optional stacktrace field to Trakerr.  ##### Sample POST request body: &#x60;&#x60;&#x60; {  \&quot;apiKey\&quot;: \&quot;a9a2807a2e8fd4602adae9e8f819790a267213234083\&quot;,  \&quot;classification\&quot;: \&quot;Error\&quot;,  \&quot;eventType\&quot;: \&quot;System.Exception\&quot;,  \&quot;eventMessage\&quot;: \&quot;This is a test exception.\&quot;,  \&quot;eventTime\&quot;: 1479477482291,  \&quot;eventStacktrace\&quot;: [    {      \&quot;type\&quot;: \&quot;System.Exception\&quot;,      \&quot;message\&quot;: \&quot;This is a test exception.\&quot;,      \&quot;traceLines\&quot;: [        {          \&quot;function\&quot;: \&quot;Main\&quot;,          \&quot;line\&quot;: 19,          \&quot;file\&quot;: \&quot;TrakerrSampleApp\\\\Program.cs\&quot;        }      ]    }  ],  \&quot;contextAppVersion\&quot;: \&quot;1.0\&quot;,  \&quot;contextEnvName\&quot;: \&quot;development\&quot;,  \&quot;contextEnvHostname\&quot;: \&quot;trakerr.io\&quot;,  \&quot;contextAppOS\&quot;: \&quot;Win32NT Service Pack 1\&quot;,  \&quot;contextAppOSVersion\&quot;: \&quot;6.1.7601.65536\&quot; } &#x60;&#x60;&#x60; ##### Sample POST response body (200 OK): &#x60;&#x60;&#x60; { } &#x60;&#x60;&#x60; 
+     * @param {module:trakerr/model/AppEvent} data Event to submit
+     * @param {module:trakerr/api/EventsApi~eventsPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.eventsPost = function(data, callback) {
       var postBody = data;

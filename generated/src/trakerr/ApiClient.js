@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -31,16 +31,16 @@
     module.exports = factory(require('superagent'));
   } else {
     // Browser globals (root is window)
-    if (!root.SeverrApi) {
-      root.SeverrApi = {};
+    if (!root.TrakerrApi) {
+      root.TrakerrApi = {};
     }
-    root.SeverrApi.ApiClient = factory(root.superagent);
+    root.TrakerrApi.ApiClient = factory(root.superagent);
   }
 }(this, function(superagent) {
   'use strict';
 
   /**
-   * @module severr/ApiClient
+   * @module trakerr/ApiClient
    * @version 1.0.0
    */
 
@@ -48,16 +48,16 @@
    * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
    * application to use this class directly - the *Api and model classes provide the public API for the service. The
    * contents of this file should be regarded as internal but are documented for completeness.
-   * @alias module:severr/ApiClient
+   * @alias module:trakerr/ApiClient
    * @class
    */
   var exports = function() {
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://www.severr.io/api/v1
+     * @default https://www.trakerr.io/api/v1
      */
-    this.basePath = 'https://www.severr.io/api/v1'.replace(/\/+$/, '');
+    this.basePath = 'https://www.trakerr.io/api/v1'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
@@ -238,7 +238,7 @@
   /**
    * Builds a string representation of an array-type actual parameter, according to the given collection format.
    * @param {Array} param An array parameter.
-   * @param {module:severr/ApiClient.CollectionFormatEnum} collectionFormat The array element separator strategy.
+   * @param {module:trakerr/ApiClient.CollectionFormatEnum} collectionFormat The array element separator strategy.
    * @returns {String|Array} A string representation of the supplied collection, using the specified delimiter. Returns
    * <code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.
    */
@@ -329,7 +329,7 @@
 
   /**
    * Callback function to receive the result of the operation.
-   * @callback module:severr/ApiClient~callApiCallback
+   * @callback module:trakerr/ApiClient~callApiCallback
    * @param {String} error Error message, if any.
    * @param data The data returned by the service call.
    * @param {String} response The complete HTTP response.
@@ -349,7 +349,7 @@
    * @param {Array.<String>} accepts An array of acceptable response MIME types.
    * @param {(String|Array|ObjectFunction)} returnType The required type to return; can be a string for simple types or the
    * constructor for a complex type.
-   * @param {module:severr/ApiClient~callApiCallback} callback The callback function.
+   * @param {module:trakerr/ApiClient~callApiCallback} callback The callback function.
    * @returns {Object} The SuperAgent request object.
    */
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
@@ -506,7 +506,7 @@
 
   /**
    * The default API client implementation.
-   * @type {module:severr/ApiClient}
+   * @type {module:trakerr/ApiClient}
    */
   exports.instance = new exports();
 

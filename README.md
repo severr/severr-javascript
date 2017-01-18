@@ -1,6 +1,6 @@
-# severr-javascript - the javascript library for the Severr API
+# trakerr-javascript - the javascript library for the Trakerr API
 
-Get your application events and errors to Severr via the *Severr API*.
+Get your application events and errors to Trakerr via the *Trakerr API*.
 
 - API version: 1.0.0
 - SDK version: 1.0.0
@@ -11,7 +11,7 @@ Get your application events and errors to Severr via the *Severr API*.
 - nodejs
 
 ## Dependencies
-npm install --save severr/severr-javascript
+npm install --save trakerr/trakerr-javascript
 
 ## Getting Started (Node/Browser)
 
@@ -21,26 +21,26 @@ For node apps just installing the above dependencies and bootstrapping the code 
 
 ### Create a client
 ```javascript
-var SeverrClient = require('severr-javascript');
-var client = new SeverrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
+var TrakerrClient = require('trakerr-javascript');
+var client = new TrakerrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
 ```
 
 ### Option-1: Handle exceptions with a global handler
 ```javascript
-// Option-1: Add a global exception handler, any error thrown with throw new Error('...'); will now be sent to Severr
+// Option-1: Add a global exception handler, any error thrown with throw new Error('...'); will now be sent to Trakerr
 client.handleExceptions(false);
 ```
 
 ### Option-2: Create and send event
 ```javascript
-// Option-2: Send event manually to Severr
+// Option-2: Send event manually to Trakerr
 try {
     // create a new event
     var appEvent = client.createAppEvent();
     
     // ... populate any member data ...
 
-    // send it to Severr
+    // send it to Trakerr
     client.sendEvent(appEvent, function(error, data, response) {
         if(error) {
             console.error('Error Response: ' + error + ', data = ' + data + ', response = ' + JSON.stringify(response));
@@ -58,20 +58,20 @@ try {
 'use strict';
 
 // create a new client
-var SeverrClient = require('severr-javascript');
-var client = new SeverrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
+var TrakerrClient = require('trakerr-javascript');
+var client = new TrakerrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
 
-// Option-1: Add a global exception handler, any error thrown with throw new Error('...'); will now be sent to Severr
+// Option-1: Add a global exception handler, any error thrown with throw new Error('...'); will now be sent to Trakerr
 client.handleExceptions(false);
 
-// Option-2: Send event manually to Severr
+// Option-2: Send event manually to Trakerr
 try {
     // create a new event
     var appEvent = client.createAppEvent();
     
     // ... populate any member data ...
 
-    // send it to Severr
+    // send it to Trakerr
     client.sendEvent(appEvent, function(error, data, response) {
         if(error) {
             console.error('Error Response: ' + error + ', data = ' + data + ', response = ' + JSON.stringify(response));
@@ -101,10 +101,10 @@ Then include *bundle.js* in the HTML pages.
 Install an $exceptionHandler as shown below.
 
 ```javascript
-var SeverrClient = require('severr-javascript');
+var TrakerrClient = require('trakerr-javascript');
 
 mod.factory('$exceptionHandler', function ($log, config) {
-    var client = new SeverrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
+    var client = new TrakerrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
     
     // create a new event
     var appEvent = client.createAppEvent();
@@ -123,6 +123,6 @@ mod.factory('$exceptionHandler', function ($log, config) {
 <a name="documentation-for-models"></a>
 ## Documentation for AppEvent
 
- - [SeverrApi.AppEvent](generated/docs/AppEvent.md)
+ - [TrakerrApi.AppEvent](generated/docs/AppEvent.md)
 
 

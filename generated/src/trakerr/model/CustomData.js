@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -25,16 +25,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['severr/ApiClient', 'severr/model/CustomDoubleData', 'severr/model/CustomStringData'], factory);
+    define(['trakerr/ApiClient', 'trakerr/model/CustomDoubleData', 'trakerr/model/CustomStringData'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('./CustomDoubleData'), require('./CustomStringData'));
   } else {
     // Browser globals (root is window)
-    if (!root.SeverrApi) {
-      root.SeverrApi = {};
+    if (!root.TrakerrApi) {
+      root.TrakerrApi = {};
     }
-    root.SeverrApi.CustomData = factory(root.SeverrApi.ApiClient, root.SeverrApi.CustomDoubleData, root.SeverrApi.CustomStringData);
+    root.TrakerrApi.CustomData = factory(root.TrakerrApi.ApiClient, root.TrakerrApi.CustomDoubleData, root.TrakerrApi.CustomStringData);
   }
 }(this, function(ApiClient, CustomDoubleData, CustomStringData) {
   'use strict';
@@ -44,14 +44,14 @@
 
   /**
    * The CustomData model module.
-   * @module severr/model/CustomData
+   * @module trakerr/model/CustomData
    * @version 1.0.0
    */
 
   /**
    * Constructs a new <code>CustomData</code>.
-   * (optional) Custom string or double data to submit along with the event. This data can then be used in the Severr UI to view segmented data.
-   * @alias module:severr/model/CustomData
+   * (optional) Custom string or double data to submit along with the event. This data can then be used in the Trakerr UI to view segmented data.
+   * @alias module:trakerr/model/CustomData
    * @class
    */
   var exports = function() {
@@ -65,8 +65,8 @@
    * Constructs a <code>CustomData</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:severr/model/CustomData} obj Optional instance to populate.
-   * @return {module:severr/model/CustomData} The populated <code>CustomData</code> instance.
+   * @param {module:trakerr/model/CustomData} obj Optional instance to populate.
+   * @return {module:trakerr/model/CustomData} The populated <code>CustomData</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -83,11 +83,11 @@
   }
 
   /**
-   * @member {module:severr/model/CustomStringData} stringData
+   * @member {module:trakerr/model/CustomStringData} stringData
    */
   exports.prototype['stringData'] = undefined;
   /**
-   * @member {module:severr/model/CustomDoubleData} doubleData
+   * @member {module:trakerr/model/CustomDoubleData} doubleData
    */
   exports.prototype['doubleData'] = undefined;
 

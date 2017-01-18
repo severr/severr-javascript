@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -25,16 +25,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['severr/ApiClient'], factory);
+    define(['trakerr/ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
-    if (!root.SeverrApi) {
-      root.SeverrApi = {};
+    if (!root.TrakerrApi) {
+      root.TrakerrApi = {};
     }
-    root.SeverrApi.CustomDoubleData = factory(root.SeverrApi.ApiClient);
+    root.TrakerrApi.CustomDoubleData = factory(root.TrakerrApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -44,13 +44,13 @@
 
   /**
    * The CustomDoubleData model module.
-   * @module severr/model/CustomDoubleData
+   * @module trakerr/model/CustomDoubleData
    * @version 1.0.0
    */
 
   /**
    * Constructs a new <code>CustomDoubleData</code>.
-   * @alias module:severr/model/CustomDoubleData
+   * @alias module:trakerr/model/CustomDoubleData
    * @class
    */
   var exports = function() {
@@ -72,8 +72,8 @@
    * Constructs a <code>CustomDoubleData</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:severr/model/CustomDoubleData} obj Optional instance to populate.
-   * @return {module:severr/model/CustomDoubleData} The populated <code>CustomDoubleData</code> instance.
+   * @param {module:trakerr/model/CustomDoubleData} obj Optional instance to populate.
+   * @return {module:trakerr/model/CustomDoubleData} The populated <code>CustomDoubleData</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

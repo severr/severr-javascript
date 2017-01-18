@@ -1,12 +1,12 @@
 {
-  "name": "severr-javascript",
+  "name": "trakerr-javascript",
   "version": "1.0.0",
-  "description": "Severr Javascript Client",
+  "description": "Trakerr Javascript Client",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "severr",
+  "author": "trakerr",
   "license": "Apache-2.0",
   "dependencies": {
     "stacktrace-js": "^1.3.1",

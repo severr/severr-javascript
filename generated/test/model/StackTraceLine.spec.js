@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -31,15 +31,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SeverrApi);
+    factory(root.expect, root.TrakerrApi);
   }
-}(this, function(expect, SeverrApi) {
+}(this, function(expect, TrakerrApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SeverrApi.StackTraceLine();
+    instance = new TrakerrApi.StackTraceLine();
   });
 
   var getProperty = function(object, getter, property) {
@@ -61,25 +61,25 @@
   describe('StackTraceLine', function() {
     it('should create an instance of StackTraceLine', function() {
       // uncomment below and update the code to test StackTraceLine
-      //var instane = new SeverrApi.StackTraceLine();
-      //expect(instance).to.be.a(SeverrApi.StackTraceLine);
+      //var instane = new TrakerrApi.StackTraceLine();
+      //expect(instance).to.be.a(TrakerrApi.StackTraceLine);
     });
 
     it('should have the property _function (base name: "function")', function() {
       // uncomment below and update the code to test the property _function
-      //var instane = new SeverrApi.StackTraceLine();
+      //var instane = new TrakerrApi.StackTraceLine();
       //expect(instance).to.be();
     });
 
     it('should have the property line (base name: "line")', function() {
       // uncomment below and update the code to test the property line
-      //var instane = new SeverrApi.StackTraceLine();
+      //var instane = new TrakerrApi.StackTraceLine();
       //expect(instance).to.be();
     });
 
     it('should have the property file (base name: "file")', function() {
       // uncomment below and update the code to test the property file
-      //var instane = new SeverrApi.StackTraceLine();
+      //var instane = new TrakerrApi.StackTraceLine();
       //expect(instance).to.be();
     });
 

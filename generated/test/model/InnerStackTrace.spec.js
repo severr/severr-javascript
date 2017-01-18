@@ -1,6 +1,6 @@
 /**
- * Severr API
- * Get your application events and errors to Severr via the *Severr API*.
+ * Trakerr API
+ * Get your application events and errors to Trakerr via the *Trakerr API*.
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -31,15 +31,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SeverrApi);
+    factory(root.expect, root.TrakerrApi);
   }
-}(this, function(expect, SeverrApi) {
+}(this, function(expect, TrakerrApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SeverrApi.InnerStackTrace();
+    instance = new TrakerrApi.InnerStackTrace();
   });
 
   var getProperty = function(object, getter, property) {
@@ -61,25 +61,25 @@
   describe('InnerStackTrace', function() {
     it('should create an instance of InnerStackTrace', function() {
       // uncomment below and update the code to test InnerStackTrace
-      //var instane = new SeverrApi.InnerStackTrace();
-      //expect(instance).to.be.a(SeverrApi.InnerStackTrace);
+      //var instane = new TrakerrApi.InnerStackTrace();
+      //expect(instance).to.be.a(TrakerrApi.InnerStackTrace);
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new SeverrApi.InnerStackTrace();
+      //var instane = new TrakerrApi.InnerStackTrace();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new SeverrApi.InnerStackTrace();
+      //var instane = new TrakerrApi.InnerStackTrace();
       //expect(instance).to.be();
     });
 
     it('should have the property traceLines (base name: "traceLines")', function() {
       // uncomment below and update the code to test the property traceLines
-      //var instane = new SeverrApi.InnerStackTrace();
+      //var instane = new TrakerrApi.InnerStackTrace();
       //expect(instance).to.be();
     });
 

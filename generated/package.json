@@ -1,9 +1,9 @@
 {
-  "name": "severr_api",
+  "name": "trakerr_api",
   "version": "1.0.0",
-  "description": "Get_your_application_events_and_errors_to_Severr_via_the_Severr_API_",
+  "description": "Get_your_application_events_and_errors_to_Trakerr_via_the_Trakerr_API_",
   "license": "Apache-2.0",
-  "main": "src/severr/index.js",
+  "main": "src/trakerr/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
   },

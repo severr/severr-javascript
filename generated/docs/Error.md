@@ -1,4 +1,4 @@
-# SeverrApi.Error
+# TrakerrApi.Error
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SeverrApi.StackTraceLine
+# TrakerrApi.StackTraceLine
 
 ## Properties
 Name | Type | Description | Notes
