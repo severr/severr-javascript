@@ -125,10 +125,10 @@
             return appEvent;
         }
 
-        function fillStacktrace(error, stackFrames) {
+        function fillStacktrace(error, classification, stackFrames) {
             var type = (typeof error === 'object') ? error.constructor.name : (typeof error).toString();
 
-            var newEvent = _this.createAppEvent("Error", type, error.toString());
+            var newEvent = _this.createAppEvent(classification ? classification : "Error", type, error.toString());
             newEvent.eventStacktrace = new TrakerrApi.Stacktrace();
 
             var innerTrace = new TrakerrApi.InnerStackTrace();
@@ -148,11 +148,11 @@
             return newEvent;
         }
 
-        function sendEventFromError(err, shouldDie) {
+        function sendEventFromError(err, classification, shouldDie) {
             StackTrace
                 .fromError(err)
                 .then(function(stackFrames) {
-                    var newEvent = fillStacktrace(err, stackFrames);
+                    var newEvent = fillStacktrace(err, classification, stackFrames);
                     _this.sendEvent(newEvent, function(error, data, response) {
                         if(error) {
                             console.error('Error Response: ' + error + ', data = ' + data + ', response = ' + JSON.stringify(response));
@@ -185,13 +185,13 @@
                     if (string.indexOf(substring) > -1){
                         console.error('Script Error: Script error encountered, see browser console for more.');
                     } else {
-                        sendEventFromError(error, false);
+                        sendEventFromError(error, "Error", false);
                     }
                 }
             } else if(typeof process !== 'undefined') {
                 shouldDie = (typeof shouldDie === 'undefined') ? true : shouldDie;
                 process.on('uncaughtException', function(err) {
-                    sendEventFromError(err, shouldDie);
+                    sendEventFromError(err, "Error", shouldDie);
                 });
             }
         };
@@ -213,6 +213,15 @@
             if(!eventMessage) eventMessage = 'unknown';
 
             return fillDefaults(new TrakerrApi.AppEvent(_this.apiKey, classification, eventType, eventMessage));
+        };
+
+        /**
+         * Send err to Trackerr
+         *
+         * @param err the error to send
+         */
+        TrakerrClient.prototype.sendError = function(err, classification) {
+            sendEventFromError(err, classification);
         };
 
         /**

@@ -22,7 +22,7 @@ For node apps just installing the above dependencies and bootstrapping the code 
 ### Create a client
 ```javascript
 var TrakerrClient = require('trakerr-javascript');
-var client = new TrakerrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
+var client = new TrakerrClient('<your api key here>'); // replace value within quotes with your API key instead
 ```
 
 ### Option-1: Handle exceptions with a global handler
@@ -31,7 +31,18 @@ var client = new TrakerrClient('11ca50c784b7144ac36de822e83d8069609584866662'); 
 client.handleExceptions(false);
 ```
 
-### Option-2: Create and send event
+### Option-2: Send error to Trakerr programmatically
+
+```javascript
+    try {
+
+    } catch(err) {
+        // send it to Trakerr
+        client.sendError(err);
+    }
+```
+
+### Option-3: Create and send event (including non-errors) programmatically
 ```javascript
 // Option-2: Send event manually to Trakerr
 try {
@@ -59,7 +70,7 @@ try {
 
 // create a new client
 var TrakerrClient = require('trakerr-javascript');
-var client = new TrakerrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
+var client = new TrakerrClient('<your api key here>'); // replace value within quotes with your API key instead
 
 // Option-1: Add a global exception handler, any error thrown with throw new Error('...'); will now be sent to Trakerr
 client.handleExceptions(false);
@@ -104,7 +115,7 @@ Install an $exceptionHandler as shown below.
 var TrakerrClient = require('trakerr-javascript');
 
 mod.factory('$exceptionHandler', function ($log, config) {
-    var client = new TrakerrClient('11ca50c784b7144ac36de822e83d8069609584866662'); // replace value within quotes with your API key instead
+    var client = new TrakerrClient('<your api key here>'); // replace value within quotes with your API key instead
     
     // create a new event
     var appEvent = client.createAppEvent();
@@ -112,7 +123,9 @@ mod.factory('$exceptionHandler', function ($log, config) {
     appEvent.contextEnvName = config.envName;
     
     return function (exception, cause) {
+
         $log.error(exception);
+
         client.sendEvent(appEvent, function(error, data, response) {
             // ... handle or log response if needed ...
         });
